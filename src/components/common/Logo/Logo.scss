@@ -1,0 +1,43 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__image {
+        position: relative;
+        width: 5rem;
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            position: absolute;
+            font-size: 1.4rem;
+            color: var(--orange-color);
+            top: 32%;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 2;
+        }
+    }
+
+    &__name {
+        text-transform: uppercase;
+
+        h1,
+        h5 {
+            margin: 0.5rem 0
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        h5 {
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+
+    }
+}
