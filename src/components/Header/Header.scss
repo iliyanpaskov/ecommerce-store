@@ -1,21 +1,10 @@
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-2deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-  }
-
 .header-wrapper {
     width: 100%;
     background: var(--header-footer-background);
-    box-shadow:  0px -2px 18px 3px rgba(0, 0, 0, 0.51);
+    box-shadow: 0px -2px 18px 3px rgba(0, 0, 0, 0.51);
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 
 .header {
@@ -30,21 +19,14 @@
         &__list {
             display: flex;
 
-            &__item {
+            &__item a {
+                text-transform: capitalize;
                 padding: 0.5rem 1.5rem;
                 border-radius: 1rem;
-                transition: transform .1s;
 
                 &:hover {
-                    background: var(--orange-color);
-                    animation: shake 0.5s;
-                    box-shadow:  0px -2px 18px 3px rgba(0, 0, 0, 0.51);
-                }
-
-                a{
-                    text-transform: capitalize;
-                    color: var(--black-text);
-                    font-weight: 600;
+                    background: var(--dark-green-color);
+                    color: var(--orange-color);
                 }
             }
         }

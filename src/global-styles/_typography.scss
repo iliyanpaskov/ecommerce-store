@@ -12,6 +12,8 @@ h5 {
     margin-top: 0;
     line-height: 1.1;
     font-weight: 700;
+    color: var(--dark-green-color) ;
+
 }
 
 
@@ -19,6 +21,7 @@ h5 {
 p {
     font-family: $text-font;
     margin-top: 0;
+    color: var(--dark-green-color) ;
 }
 
 a,
@@ -26,4 +29,6 @@ a:active,
 a:visited {
     text-decoration: none;
     font-family: $text-font;
+    font-weight: 600;
+    color: var(--dark-green-color) ;
 }
