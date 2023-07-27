@@ -1,17 +1,20 @@
+import { ProductsDataProvider } from './components/context/ProductsDataContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import './App.scss';
+import Products from './components/Products/Products';
 
 function App() {
 
     return (
-        <div className='app'>
-            <Header />
-            <main>
+        <ProductsDataProvider>
+            <div className='app'>
+                <Header />
+                <Products />
+                <Footer />
 
-            </main>
-            <Footer />
-        </div>
+            </div>
+        </ProductsDataProvider>
     )
 }
 

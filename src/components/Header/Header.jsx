@@ -3,7 +3,7 @@ import Logo from '../common/Logo/Logo';
 import '../Header/Header.scss';
 
 const Header = () => {
-
+  
     return (
         <div className='header-wrapper'>
             <header className='header'>
@@ -11,7 +11,10 @@ const Header = () => {
                 <nav className='header__navigation'>
                     <ul className='header__navigation__list'>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/'}>trainers</Link>
+                            <Link to={'/'}>all products</Link>
+                        </li>
+                        <li className='header__navigation__list__item'>
+                            <Link to={'/trainers'}>trainers</Link>
                         </li>
                         <li className='header__navigation__list__item'>
                             <Link to={'/t-shirts'}>t-shirts</Link>

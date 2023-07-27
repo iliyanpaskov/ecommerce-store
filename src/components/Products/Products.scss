@@ -1,0 +1,11 @@
+@use '../../global-styles/' as s;
+
+.main {
+    min-height: 100vh;
+    display: grid;
+    width: min(90%, 75rem);
+    margin: 2.9rem auto;
+    background: var( --white-background);
+    box-shadow: s.$box-shadow;
+    padding: 0.8rem;
+}

@@ -24,10 +24,11 @@
 
     &__name {
         text-transform: uppercase;
-
+        
         h1,
         h5 {
-            margin: 0.5rem 0
+            margin: 0.5rem 0;
+            color: var(--black-text);
         }
 
         h1 {
