@@ -1,0 +1,41 @@
+@use '../../global-styles/' as style;
+
+.grid__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 1rem 4rem 1rem;
+}
+
+.grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    justify-items: center;
+
+    &__button {
+        position: absolute;
+        bottom: 0;
+        padding: 0.5rem 1.5rem;
+        font-family: style.$text-font;
+        text-transform: uppercase;
+        background: none;
+        font-weight: 600;
+        border: 1px solid var(--dark-green-color);
+        border-radius: 1rem;
+        transition: transform .3s ease;
+        
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+            background: var(--dark-green-color);
+            color: var(--orange-color);
+        }
+    }
+
+}

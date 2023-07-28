@@ -1,0 +1,80 @@
+.card {
+    width: 14rem;
+    background: var(--orange-color);
+    padding: 0.1rem;
+    border: 1px solid var(--dark-green-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image__wrapper {
+        width: 13.7rem;
+
+        & img {
+            width: 100%;
+            height: 12rem;
+            object-fit: cover;
+            border: 1px solid var(--dark-green-color);
+        }
+    }
+
+    &__content__wrapper {
+        padding: 0.3rem;
+        text-align: center;
+    }
+
+    &__content__title,
+    &__content__info,
+    &__content__price,
+    &__content__stars {
+        color: var(--dark-green-color);
+    }
+
+    &__content__info {
+        white-space: pre-wrap;
+        width: 13rem;
+        overflow: hidden;
+        text-overflow: "ellipsis";
+    }
+
+    &__content__price {
+        margin-inline: auto;
+        width: 80%;
+        display: flex;
+        justify-content: space-around;
+        align-items: end;
+
+        &__old {
+            color: red;
+            font-size: 0.9rem;
+            text-decoration: line-through;
+        }
+
+        &__new {
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+    }
+
+    &__buttons__wrapper {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+
+        & button {
+            padding: 0.3rem 0.6rem;
+            background: var( --background-color);
+            color: var(--dark-green-color);
+            border:1px solid var(--dark-green-color);
+            border-radius: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

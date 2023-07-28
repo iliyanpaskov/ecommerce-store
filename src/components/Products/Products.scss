@@ -1,11 +1,21 @@
 @use '../../global-styles/' as s;
 
-.main {
+.main__wrapper {
     min-height: 100vh;
-    display: grid;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
     width: min(90%, 75rem);
     margin: 2.9rem auto;
     background: var( --white-background);
     box-shadow: s.$box-shadow;
     padding: 0.8rem;
+    padding: 1rem;
+
+    &__content {
+        display: flex;
+    }
+
 }
