@@ -1,7 +1,25 @@
+@use '../../global-styles/' as gl;
+
 .sorter {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 2rem;
     border: none;
+    font-family: gl.$text-font;
+    
+    &>select {
+        padding:0.4rem 0.8rem;
+        margin-left: 0.6rem;
+        text-align: center;
+        border-radius: 1rem;
+        font-family: gl.$text-font;
+        border: 1   px solid gray;
+
+        &:hover{
+            color: var(--orange-color);
+            background: var( --dark-green-color);
+            cursor: pointer;
+        }
+    }
 }

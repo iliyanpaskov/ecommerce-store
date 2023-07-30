@@ -66,8 +66,8 @@ const ProductsGridCard = ({ product, info }) => {
                 }
             </div>
             <div className='card__buttons__wrapper'>
-                <button>details</button>
-                <button>add to cart</button>
+                <button className='details'>details</button>
+                <button className='add'>add to cart</button>
             </div>
         </article>
     )

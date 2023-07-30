@@ -1,11 +1,16 @@
 .card {
     width: 14rem;
-    background: var(--orange-color);
     padding: 0.1rem;
     border: 1px solid var(--dark-green-color);
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: transform .2s;
+
+    &:hover {
+        transform: scale(1.1);
+        background: var(--orange-color);
+    }
 
     &__image__wrapper {
         width: 13.7rem;
@@ -15,6 +20,7 @@
             height: 12rem;
             object-fit: cover;
             border: 1px solid var(--dark-green-color);
+            
         }
     }
 
@@ -65,16 +71,23 @@
 
         & button {
             padding: 0.3rem 0.6rem;
-            background: var( --background-color);
+            background: var(--background-color);
             color: var(--dark-green-color);
-            border:1px solid var(--dark-green-color);
+            border: 1px solid var(--dark-green-color);
             border-radius: 1rem;
             font-weight: 600;
             text-transform: uppercase;
-            
-            &:hover{
+
+            &:hover {
                 cursor: pointer;
+
             }
+        }
+
+        & .add:hover,
+        & .details:hover {
+            background: var(--dark-green-color);
+            color: var(--orange-color);
         }
     }
 }
