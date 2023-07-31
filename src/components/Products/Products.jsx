@@ -1,11 +1,11 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { getAllProducts } from '../../services/products';
-import { ProductsDataContext } from '../../context/ProductsDataContext.jsx'
+import { ProductsDataContext } from '../../contexts/ProductsDataContext.jsx'
 import Filter from '../Filter/Filter';
 import Category from '../Category/Category';
-import ProductsGrid from '../ProductsGrid/ProductsGrid';
 import Trainers from '../Trainers/Trainers';
+import AllProducts from '../AllProducts/AllProducts';
 import './Products.scss';
 
 const Products = () => {
@@ -18,7 +18,7 @@ const Products = () => {
         getAll();
     }, []);
 
-   
+
 
     return (
 
@@ -28,9 +28,9 @@ const Products = () => {
                 <div className='main__content'>
                     <Filter />
                     <Routes>
-                        <Route path='/' element= {<ProductsGrid />}/>
-                        <Route path='/trainers' element= {< Trainers/>}/>
-                        
+                        <Route path='/' element={<AllProducts />} />
+                        <Route path='/trainers' element={< Trainers />} />
+
                     </Routes>
                 </div>
             </section>

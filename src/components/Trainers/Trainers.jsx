@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ProductsDataContext } from '../../context/ProductsDataContext';
+import { ProductsDataContext } from '../../contexts/ProductsDataContext';
 import ProductsGridCard from '../ProductsGridCard/ProductsGridCard';
 import '../../products-styles/ProductsGridZoneStyles.scss';
 

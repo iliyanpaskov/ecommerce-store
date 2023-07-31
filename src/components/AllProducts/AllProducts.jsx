@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { ProductsDataContext } from '../../context/ProductsDataContext';
+import { ProductsDataContext } from '../../contexts/ProductsDataContext';
 import ProductsGridCard from '../ProductsGridCard/ProductsGridCard';
 import '../../products-styles/ProductsGridZoneStyles.scss';
 
-const ProductsGrid = () => {
+const AllProducts = () => {
 
     const {products} = useContext(ProductsDataContext);
     const informationCutter = (str) => {
@@ -15,7 +15,7 @@ const ProductsGrid = () => {
         }
         return result;
     }
-
+    
     const allProducts = products;
    
     return (
@@ -28,4 +28,4 @@ const ProductsGrid = () => {
     )
 }
 
-export default ProductsGrid;
+export default AllProducts;

@@ -4,8 +4,6 @@ export const ProductsDataContext = createContext();
 
 export const ProductsDataProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
-    const [currentCategory, setCurrentCategory] = useState('');
-
 
     // const pants = products.filter(product => product.type === 'pants');
     // const tShirts = products.filter(product => product.type === 'tshirts');

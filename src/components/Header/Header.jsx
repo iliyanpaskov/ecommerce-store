@@ -1,9 +1,13 @@
 import { Link } from 'react-router-dom';
 import Logo from '../common/Logo/Logo';
 import '../Header/Header.scss';
+import { useContext } from 'react';
+import { CurrentCategoryContext } from '../../contexts/CurrentCategoryContext';
 
 const Header = () => {
   
+    const {categorySetter} = useContext(CurrentCategoryContext);
+
     return (
         <div className='header-wrapper'>
             <header className='header'>
@@ -11,10 +15,10 @@ const Header = () => {
                 <nav className='header__navigation'>
                     <ul className='header__navigation__list'>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/'}>all products</Link>
+                            <Link to={'/'} onClick={(e)=>categorySetter('All products')}>all products</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/trainers'}>trainers</Link>
+                            <Link to={'/trainers'} onClick={(e)=>categorySetter('Trainers')}>trainers</Link>
                         </li>
                         <li className='header__navigation__list__item'>
                             <Link to={'/t-shirts'}>t-shirts</Link>
