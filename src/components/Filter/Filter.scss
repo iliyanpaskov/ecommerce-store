@@ -1,4 +1,6 @@
 .filter {
+    position: sticky;
+    top: 7.4rem;
     border-right: 1px solid lightgrey;
     width: 10rem ;
     display: flex;
@@ -9,9 +11,41 @@
     &__form {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        padding: 4rem 0;
+        align-items: start;
+
+
+        &__title {
+            font-weight: 600;
+            text-decoration: underline;
+            margin: 1rem 0 0.5rem 0;
+        }
+        
+        &__option {
+            display: flex;
+            align-items: center;
+        }
+        
+       
     }
 
-    
+    .black {
+        accent-color: #000;
+    }
+    .white {
+        accent-color:#f0f0f0;
+    }
+    .red{
+        accent-color: #c50000;
+    }
+    .blue{
+        accent-color: rgb(2, 2, 194);
+    }
+    .green{
+        accent-color: rgb(6, 155, 6);
+    }
+
+    .other {
+        background: #000;
+        accent-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);;
+    }
 }

@@ -9,11 +9,12 @@ import AllProducts from '../AllProducts/AllProducts';
 import './Products.scss';
 
 const Products = () => {
-    const { setProductsData } = useContext(ProductsDataContext);
+    const { setProductsData,setAllProductsData } = useContext(ProductsDataContext);
     useEffect(() => {
         async function getAll() {
             const res = await getAllProducts();
             setProductsData(res);
+            setAllProductsData(res);
         }
         getAll();
     }, []);
