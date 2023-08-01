@@ -3,6 +3,7 @@ import { ProductsDataContext } from '../../contexts/ProductsDataContext';
 import ProductsGridCard from '../ProductsGridCard/ProductsGridCard';
 import NotAvailable from '../common/NotAvailable/NotAvailable';
 import '../../products-styles/ProductsGridZoneStyles.scss';
+import ProductsCount from '../ProductsCount/ProductsCount';
 
 const Trainers = () => {
 
@@ -17,15 +18,17 @@ const Trainers = () => {
         return result;
     }
     const trainers = products.filter(product => product.type === 'trainers');
+    const productsCount = trainers.length;
 
     return (
         <section className='grid__wrapper'>
             {
-                trainers.length > 0
+                productsCount > 0
                     ? <>
                         <section className='grid'>
                             {trainers.map(product => <ProductsGridCard key={product.objectId} product={product} info={informationCutter(product.description)} />)}
                         </section>
+                        <ProductsCount count={productsCount} />
                         <button className='grid__button'>load more</button>
                     </>
                     : <NotAvailable />

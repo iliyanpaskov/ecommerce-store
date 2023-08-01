@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { ProductsDataContext } from '../../contexts/ProductsDataContext';
 import ProductsGridCard from '../ProductsGridCard/ProductsGridCard';
 import NotAvailable from '../common/NotAvailable/NotAvailable';
+import ProductsCount from '../ProductsCount/ProductsCount';
 import '../../products-styles/ProductsGridZoneStyles.scss';
 
 const Pants = () => {
@@ -17,15 +18,17 @@ const Pants = () => {
         return result;
     }
     const pants = products.filter(product => product.type === 'pants');
+    const productsCount = pants.length;
 
     return (
         <section className='grid__wrapper'>
             {
-                pants.length > 0
+                productsCount > 0
                     ? <>
                         <section className='grid'>
                             {pants.map(product => <ProductsGridCard key={product.objectId} product={product} info={informationCutter(product.description)} />)}
                         </section>
+                        <ProductsCount count={productsCount} />
                         <button className='grid__button'>load more</button>
                     </>
                     : <NotAvailable />

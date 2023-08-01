@@ -1,9 +1,9 @@
-const ProductsCount = () => {
+import '../ProductsCount/ProductsCount.scss';
+
+const ProductsCount = ({count}) => {
     return (
-        <article>
-            <p>
-                105
-            </p>
+        <article className='counter'>
+            <p >{count}</p>
         </article>
     )
 }

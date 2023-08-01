@@ -21,6 +21,23 @@
         &__list {
             display: flex;
 
+            &__item__cart {
+                position: relative;
+                z-index: 2;
+
+                & .header__cart__count {
+                    position: absolute; 
+                    z-index: 1;  
+                    top: -0.9rem;
+                    right: 1rem;               
+                    background: red;
+                    font-size: 0.7rem;
+                    padding: 0.2rem;
+                    border-radius: 50%;
+                    font-weight: 900;
+                }
+            }
+
             &__item a {
                 text-transform: capitalize;
                 padding: 0.5rem 1.5rem;
@@ -30,6 +47,7 @@
                     background: var(--dark-green-color);
                     color: var(--orange-color);
                 }
+
             }
         }
     }

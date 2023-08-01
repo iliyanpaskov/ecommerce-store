@@ -19,7 +19,6 @@ export const ProductsDataProvider = ({ children }) => {
     const sortData = (sortParam) => {
         let data = [];
         if (sortParam === 'a-z') {
-            console.log(products);
             data = [...products].sort((a, b) => {
                 if (a.name.toLowerCase() < b.name.toLowerCase()) {
                     return -1;
@@ -29,7 +28,6 @@ export const ProductsDataProvider = ({ children }) => {
                 return 0;
             });
         } else if (sortParam === 'z-a') {
-            console.log(products);
             data = [...products].sort((a, b) => {
                 if (a.name.toLowerCase() > b.name.toLowerCase()) {
                     return -1;
@@ -39,12 +37,10 @@ export const ProductsDataProvider = ({ children }) => {
                 return 0;
             });
         } else if (sortParam === 'low') {
-            console.log(products);
             data = [...products].sort((a, b) => {
                 return Number(a.price) - Number(b.price);
             });
         } else if (sortParam === 'high') {
-            console.log(products);
             data = [...products].sort((a, b) => {
                 return Number(b.price) - Number(a.price);
             });

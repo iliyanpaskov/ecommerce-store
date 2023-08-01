@@ -7,7 +7,7 @@ const Filter = () => {
     const [brand, setBrand] = useState('all brands');
     const [gender, setGender] = useState('all genders');
     const [color, setColor] = useState('all colors');
-    const { filterData, allProducts, setProductsData } = useContext(ProductsDataContext);
+    const { filterData } = useContext(ProductsDataContext);
 
     useEffect(() => {
         filterData(brand, gender, color);
@@ -15,17 +15,12 @@ const Filter = () => {
 
     const brandFomrHandler = (e) => {
         setBrand(e.target.value);
-        console.log(brand);
     }
     const genderFomrHandler = (e) => {
         setGender(e.target.value);
-        console.log(gender);
-
     }
     const colorFomrHandler = (e) => {
         setColor(e.target.value);
-        console.log(color);
-
     }
 
 
