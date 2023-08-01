@@ -31,7 +31,6 @@ const Products = () => {
                     <Routes>
                         <Route path='/' element={<AllProducts />} />
                         <Route path='/trainers' element={< Trainers />} />
-
                     </Routes>
                 </div>
             </section>

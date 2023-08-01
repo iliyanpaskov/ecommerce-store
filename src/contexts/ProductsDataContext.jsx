@@ -5,9 +5,7 @@ export const ProductsDataContext = createContext();
 export const ProductsDataProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
-
-    // const pants = products.filter(product => product.type === 'pants');
-    // const tShirts = products.filter(product => product.type === 'tshirts');
+    const [isAvailable, setIsAvailable] = useState(true)
 
     const setProductsData = (data) => {
         setProducts(data);
@@ -16,7 +14,6 @@ export const ProductsDataProvider = ({ children }) => {
     const setAllProductsData = (data) => {
         setAllProducts([...data]);
     }
-
 
     const sortData = (sortParam) => {
         let data = [];
@@ -54,7 +51,6 @@ export const ProductsDataProvider = ({ children }) => {
         setProducts(data);
     }
 
-    
     const filterData = (brand, gender, color) => {
         let data = [...allProducts];
         if (brand === 'adidas') {
