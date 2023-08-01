@@ -8,6 +8,7 @@ import Trainers from '../Trainers/Trainers';
 import AllProducts from '../AllProducts/AllProducts';
 import TShirts from '../TShirts/TShirts';
 import './Products.scss';
+import Pants from '../Pants/Pants';
 
 const Products = () => {
     const { setProductsData, setAllProductsData,setIsAvailable } = useContext(ProductsDataContext);
@@ -34,6 +35,7 @@ const Products = () => {
                         <Route path='/' element={<AllProducts />} />
                         <Route path='/trainers' element={< Trainers />} />
                         <Route path='/t-shirts' element={<TShirts />} />
+                        <Route path='/pants' element={<Pants/>}/>
                     </Routes>
                 </div>
             </section>
