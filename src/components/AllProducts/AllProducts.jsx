@@ -6,7 +6,9 @@ import '../../products-styles/ProductsGridZoneStyles.scss';
 
 const AllProducts = () => {
 
-    const { products,isAvailable } = useContext(ProductsDataContext);
+    const { products } = useContext(ProductsDataContext);
+
+
     const informationCutter = (str) => {
         let result = '';
         if (str.length > 30) {
@@ -22,7 +24,7 @@ const AllProducts = () => {
     return (
         <section className='grid__wrapper'>
             {
-               isAvailable
+                allProducts.length > 0
                     ? <>
                         <section className='grid'>
                             {allProducts.map(product => <ProductsGridCard key={product.objectId} product={product} info={informationCutter(product.description)} />)}
@@ -30,6 +32,7 @@ const AllProducts = () => {
                         <button className='grid__button'>load more</button>
                     </>
                     : <NotAvailable />
+
             }
         </section>
     )

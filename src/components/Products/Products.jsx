@@ -9,15 +9,16 @@ import AllProducts from '../AllProducts/AllProducts';
 import TShirts from '../TShirts/TShirts';
 import './Products.scss';
 import Pants from '../Pants/Pants';
+import Loader from '../common/Loader/Loader';
 
 const Products = () => {
-    const { setProductsData, setAllProductsData,setIsAvailable } = useContext(ProductsDataContext);
+    const { setProductsData, setAllProductsData, isLoading, setIsLoading} = useContext(ProductsDataContext);
     useEffect(() => {
         async function getAll() {
             const res = await getAllProducts();
             setProductsData(res);
             setAllProductsData(res);
-            setIsAvailable(true)
+            setIsLoading(false);
         }
         getAll();
     }, []);
@@ -27,18 +28,22 @@ const Products = () => {
     return (
 
         <main className='main__wrapper'>
-            <section className="main">
-                <Category />
-                <div className='main__content'>
-                    <Filter />
-                    <Routes>
-                        <Route path='/' element={<AllProducts />} />
-                        <Route path='/trainers' element={< Trainers />} />
-                        <Route path='/t-shirts' element={<TShirts />} />
-                        <Route path='/pants' element={<Pants/>}/>
-                    </Routes>
-                </div>
-            </section>
+            {
+                isLoading
+                    ? <Loader />
+                    : <section className="main">
+                        <Category />
+                        <div className='main__content'>
+                            <Filter />
+                            <Routes>
+                                <Route path='/' element={<AllProducts />} />
+                                <Route path='/trainers' element={< Trainers />} />
+                                <Route path='/t-shirts' element={<TShirts />} />
+                                <Route path='/pants' element={<Pants />} />
+                            </Routes>
+                        </div>
+                    </section>
+            }
         </main>
     )
 }
