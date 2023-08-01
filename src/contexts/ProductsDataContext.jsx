@@ -5,7 +5,7 @@ export const ProductsDataContext = createContext();
 export const ProductsDataProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
-    const [isAvailable, setIsAvailable] = useState(true)
+    const [isAvailable, setIsAvailable] = useState(false)
 
     const setProductsData = (data) => {
         setProducts(data);
@@ -93,7 +93,7 @@ export const ProductsDataProvider = ({ children }) => {
     }
 
     return (
-        <ProductsDataContext.Provider value={{ products, setProductsData, allProducts, setAllProductsData, sortData, filterData }}>
+        <ProductsDataContext.Provider value={{ products, setProductsData, allProducts, setAllProductsData, sortData, filterData,isAvailable,setIsAvailable }}>
             {children}
         </ProductsDataContext.Provider>
     )

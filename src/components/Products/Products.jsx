@@ -6,15 +6,17 @@ import Filter from '../Filter/Filter';
 import Category from '../Category/Category';
 import Trainers from '../Trainers/Trainers';
 import AllProducts from '../AllProducts/AllProducts';
+import TShirts from '../TShirts/TShirts';
 import './Products.scss';
 
 const Products = () => {
-    const { setProductsData,setAllProductsData } = useContext(ProductsDataContext);
+    const { setProductsData, setAllProductsData,setIsAvailable } = useContext(ProductsDataContext);
     useEffect(() => {
         async function getAll() {
             const res = await getAllProducts();
             setProductsData(res);
             setAllProductsData(res);
+            setIsAvailable(true)
         }
         getAll();
     }, []);
@@ -31,6 +33,7 @@ const Products = () => {
                     <Routes>
                         <Route path='/' element={<AllProducts />} />
                         <Route path='/trainers' element={< Trainers />} />
+                        <Route path='/t-shirts' element={<TShirts />} />
                     </Routes>
                 </div>
             </section>

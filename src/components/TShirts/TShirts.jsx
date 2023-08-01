@@ -4,9 +4,9 @@ import ProductsGridCard from '../ProductsGridCard/ProductsGridCard';
 import NotAvailable from '../common/NotAvailable/NotAvailable';
 import '../../products-styles/ProductsGridZoneStyles.scss';
 
-const AllProducts = () => {
+const TShirts = () => {
 
-    const { products,isAvailable } = useContext(ProductsDataContext);
+    const { products ,isAvailable} = useContext(ProductsDataContext);
     const informationCutter = (str) => {
         let result = '';
         if (str.length > 30) {
@@ -16,23 +16,23 @@ const AllProducts = () => {
         }
         return result;
     }
-
-    const allProducts = products;
+    const tshirts = products.filter(product => product.type === 'tshirts');
 
     return (
         <section className='grid__wrapper'>
             {
-               isAvailable
+                isAvailable
                     ? <>
                         <section className='grid'>
-                            {allProducts.map(product => <ProductsGridCard key={product.objectId} product={product} info={informationCutter(product.description)} />)}
+                            {tshirts.map(product => <ProductsGridCard key={product.objectId} product={product} info={informationCutter(product.description)} />)}
                         </section>
                         <button className='grid__button'>load more</button>
                     </>
                     : <NotAvailable />
             }
+
         </section>
     )
 }
 
-export default AllProducts;
+export default TShirts;    
