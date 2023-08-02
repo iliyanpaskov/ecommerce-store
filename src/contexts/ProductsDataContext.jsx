@@ -5,7 +5,6 @@ export const ProductsDataContext = createContext();
 export const ProductsDataProvider = ({ children }) => {
     const [products, setProducts] = useState([]);
     const [allProducts, setAllProducts] = useState([]);
-    // const [isAvailable, setIsAvailable] = useState(true);
     const [isLoading, setIsLoading] = useState(true);
 
     const setProductsData = (data) => {

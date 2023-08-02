@@ -4,7 +4,6 @@ const ProductsGridCard = ({ product, info }) => {
     const starsCount = product.stars;
     const stars = [];
     const emptyStars = [];
-    // const isDiscounted = product.discount;
     const discountedPrice = Number(product.price) * 0.85;
     for (let i = 0; i < starsCount; i++) {
         stars.push(i);
@@ -47,6 +46,16 @@ const ProductsGridCard = ({ product, info }) => {
         )
     };
 
+    const informationCutter = (str) => {
+        let result = '';
+        if (str.length > 30) {
+            result = str.substring(0, 35) + '...';
+        } else {
+            result = str;
+        }
+        return result;
+    }
+
 
     return (
         <article className='card'>
@@ -55,7 +64,7 @@ const ProductsGridCard = ({ product, info }) => {
             </div>
             <div className='card__content__wrapper'>
                 <h3 className='card__content__title'>{product.name}</h3>
-                <p className='card__content__info'>{info}</p>
+                <p className='card__content__info'>{informationCutter(product.description)}</p>
                 {
                     !product.discount
                         ?<PriceTemplate/>
