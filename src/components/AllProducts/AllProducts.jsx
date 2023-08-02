@@ -35,7 +35,7 @@ const AllProducts = () => {
     return (
         <section className='grid__wrapper'>
             {
-                productsCount > 0
+                showProducts.length > 0
                     ? <>
                         <section className='grid'>
                             {showProducts.map(product => <ProductsGridCard key={product.objectId} product={product} />)}

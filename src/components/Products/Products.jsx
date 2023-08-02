@@ -12,7 +12,7 @@ import Loader from '../common/Loader/Loader';
 import './Products.scss';
 
 const Products = () => {
-    const { setProductsData, setAllProductsData, isLoading, setIsLoading} = useContext(ProductsDataContext);
+    const { setProductsData, setAllProductsData, isLoading, setIsLoading } = useContext(ProductsDataContext);
     useEffect(() => {
         async function getAll() {
             const res = await getAllProducts();
