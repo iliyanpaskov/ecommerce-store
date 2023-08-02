@@ -7,9 +7,7 @@ const ProductsGridCard = ({ product }) => {
     const {loadProduct} = useContext(CartContext);
 
     const addButtonClickHandler = (product) => {
-        
         loadProduct(product);
-        console.log(product);
     }
 
     const starsCount = product.stars;

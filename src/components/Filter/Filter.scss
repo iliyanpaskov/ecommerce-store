@@ -46,16 +46,15 @@
     }
 
     .blue {
-        accent-color: rgb(2, 2, 194);
+        accent-color: #0202c2;
     }
 
     .green {
-        accent-color: rgb(6, 155, 6);
+        accent-color: #069b06;
     }
 
     .other {
-        background: #000;
+        background: #9e9898;
         accent-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-        ;
     }
 }

@@ -9,7 +9,9 @@ import AllProducts from '../AllProducts/AllProducts';
 import TShirts from '../TShirts/TShirts';
 import Pants from '../Pants/Pants';
 import Loader from '../common/Loader/Loader';
+// import Cart from '../Cart/Cart';
 import './Products.scss';
+import Cart from '../Cart/Cart';
 
 const Products = () => {
     const { setProductsData, setAllProductsData, isLoading, setIsLoading } = useContext(ProductsDataContext);
@@ -28,6 +30,7 @@ const Products = () => {
     return (
 
         <main className='main__wrapper'>
+            <Cart />
             {
                 isLoading
                     ? <Loader />
@@ -40,6 +43,7 @@ const Products = () => {
                                 <Route path='/trainers' element={< Trainers />} />
                                 <Route path='/t-shirts' element={<TShirts />} />
                                 <Route path='/pants' element={<Pants />} />
+                                {/* <Route path='/cart' element={<Cart />} /> */}
                             </Routes>
                         </div>
                     </section>

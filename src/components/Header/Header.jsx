@@ -8,12 +8,17 @@ import '../Header/Header.scss';
 const Header = () => {
 
     const { categorySetter } = useContext(CurrentCategoryContext);
-    const { cart } = useContext(CartContext);
-    useEffect(()=>{
+    const { cart, openCart,closeCart } = useContext(CartContext);
+    useEffect(() => {
 
-    },[cart])
+    }, [cart]);
 
     const count = cart.length;
+
+    const clickHandler = (str) => {
+        categorySetter(str);
+        closeCart();
+    } 
 
     return (
         <div className='header-wrapper'>
@@ -22,19 +27,19 @@ const Header = () => {
                 <nav className='header__navigation'>
                     <ul className='header__navigation__list'>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/'} onClick={(e) => categorySetter('All products')}>all products</Link>
+                            <Link to={'/'} onClick={(e) => clickHandler('All products')}>all products</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/trainers'} onClick={(e) => categorySetter('Trainers')}>trainers</Link>
+                            <Link to={'/trainers'} onClick={(e) => clickHandler('Trainers')}>trainers</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/t-shirts'} onClick={(e) => categorySetter('T-Shirts')}>t-shirts</Link>
+                            <Link to={'/t-shirts'} onClick={(e) => clickHandler('T-Shirts')}>t-shirts</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/pants'} onClick={(e) => categorySetter('Pants')}>pants</Link>
+                            <Link to={'/pants'} onClick={(e) => clickHandler('Pants')}>pants</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/cart'}><i className="fa-solid fa-cart-shopping   header__navigation__list__item__cart"><span className='header__cart__count'>{count}</span></i></Link>
+                            <Link onClick={(e)=>{openCart()}} to={'#'}><i className="fa-solid fa-cart-shopping  header__navigation__list__item__cart"><span className='header__cart__count' >{count}</span></i></Link>
                         </li>
 
                     </ul>

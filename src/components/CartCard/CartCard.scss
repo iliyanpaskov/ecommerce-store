@@ -1,0 +1,83 @@
+@use '../../global-styles/' as cartStyle;
+
+.cart__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 16rem;
+    height: 27rem;
+    border: 1px solid var(--orange-color);
+    padding: 0.2rem;
+    background: var(--dark-green-color);
+    box-shadow: cartStyle.$box-shadow;
+
+    &__image__wrapper {
+        width: 100%;
+        height: 14rem;
+
+        &>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid var(--orange-color);
+        }
+    }
+
+    &__content {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        color: var(--orange-color);
+        padding: 0.5rem;
+
+        &__brand,
+        &__stars,
+        &__name,
+        &__price {
+            color: var(--orange-color);
+
+            &__old {
+                text-decoration: line-through;
+                margin-right: 1rem;
+            }
+
+            &__new {
+                font-weight: 600;
+                font-style: italic;
+                font-size: 1.1rem;
+            }
+        }
+
+        &__brand {
+            font-size: 1.3rem;
+        }
+
+        &__name {
+            font-size: 1.1rem;
+        }
+
+
+    }
+
+    &__remove__button {
+        position: absolute;
+        bottom: 0;
+        background: none;
+        border: none;
+        width: 3rem;
+        transition-duration: 1.2s;
+        transition-property: transform;
+
+        &:hover{
+            cursor: pointer;
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+
+        &>img {
+            width: 100%;
+        }
+    }
+}
