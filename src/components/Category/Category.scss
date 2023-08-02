@@ -8,5 +8,9 @@
     padding: 1rem;
     border-bottom: 1px solid lightgrey;
     margin-bottom: 0.9rem;
+
+    &>h2{
+        margin: 0;
+    }
   
 }

@@ -1,14 +1,19 @@
+import { useContext, useEffect } from 'react';
+import { CurrentCategoryContext } from '../../contexts/CurrentCategoryContext';
+import { CartContext } from '../../contexts/CartContext';
 import { Link } from 'react-router-dom';
 import Logo from '../common/Logo/Logo';
 import '../Header/Header.scss';
-import { useContext } from 'react';
-import { CurrentCategoryContext } from '../../contexts/CurrentCategoryContext';
-import { CartContext } from '../../contexts/CartContext';
 
 const Header = () => {
 
     const { categorySetter } = useContext(CurrentCategoryContext);
-    const { cartCount } = useContext(CartContext);
+    const { cart } = useContext(CartContext);
+    useEffect(()=>{
+
+    },[cart])
+
+    const count = cart.length;
 
     return (
         <div className='header-wrapper'>
@@ -23,13 +28,13 @@ const Header = () => {
                             <Link to={'/trainers'} onClick={(e) => categorySetter('Trainers')}>trainers</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/t-shirts'}>t-shirts</Link>
+                            <Link to={'/t-shirts'} onClick={(e) => categorySetter('T-Shirts')}>t-shirts</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/pants'}>pants</Link>
+                            <Link to={'/pants'} onClick={(e) => categorySetter('Pants')}>pants</Link>
                         </li>
                         <li className='header__navigation__list__item'>
-                            <Link to={'/cart'}><i className="fa-solid fa-cart-shopping fa-flip-horizontal  header__navigation__list__item__cart"><span className='header__cart__count'>{cartCount}</span></i></Link>
+                            <Link to={'/cart'}><i className="fa-solid fa-cart-shopping   header__navigation__list__item__cart"><span className='header__cart__count'>{count}</span></i></Link>
                         </li>
 
                     </ul>

@@ -29,10 +29,14 @@
                     position: absolute; 
                     z-index: 1;  
                     top: -0.9rem;
-                    right: 1rem;               
+                    right: -0.8rem;
+                    
+                    width: 1.2rem;
+                    height: 1.2rem;
+                    text-align: center;               
                     background: red;
                     font-size: 0.7rem;
-                    padding: 0.2rem;
+                    padding: 0.3rem;
                     border-radius: 50%;
                     font-weight: 900;
                 }

@@ -1,6 +1,17 @@
+import { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext';
 import '../ProductsGridCard/ProductsGridCard.scss';
 
-const ProductsGridCard = ({ product, info }) => {
+const ProductsGridCard = ({ product }) => {
+
+    const {loadProduct} = useContext(CartContext);
+
+    const addButtonClickHandler = (product) => {
+        
+        loadProduct(product);
+        console.log(product);
+    }
+
     const starsCount = product.stars;
     const stars = [];
     const emptyStars = [];
@@ -76,7 +87,7 @@ const ProductsGridCard = ({ product, info }) => {
             </div>
             <div className='card__buttons__wrapper'>
                 <button className='details'>details</button>
-                <button className='add'>add to cart</button>
+                <button className='add' onClick={(e)=>{addButtonClickHandler(product)}} >add to cart</button>
             </div>
         </article>
     )
