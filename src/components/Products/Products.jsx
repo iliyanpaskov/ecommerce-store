@@ -36,16 +36,18 @@ const Products = () => {
                     ? <Loader />
                     : <section className="main">
                         <Category />
-                        <div className='main__content'>
+                        <article className='main__content'>
                             <Filter />
-                            <Routes>
-                                <Route path='/' element={<AllProducts />} />
-                                <Route path='/trainers' element={< Trainers />} />
-                                <Route path='/t-shirts' element={<TShirts />} />
-                                <Route path='/pants' element={<Pants />} />
-                                {/* <Route path='/cart' element={<Cart />} /> */}
-                            </Routes>
-                        </div>
+                            <article className='main__products'>
+                                <Routes>
+                                    <Route path='/' element={<AllProducts />} />
+                                    <Route path='/trainers' element={< Trainers />} />
+                                    <Route path='/t-shirts' element={<TShirts />} />
+                                    <Route path='/pants' element={<Pants />} />
+                                    {/* <Route path='/cart' element={<Cart />} /> */}
+                                </Routes>
+                            </article>
+                        </article>
                     </section>
             }
         </main>

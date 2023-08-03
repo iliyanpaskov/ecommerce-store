@@ -2,22 +2,25 @@
 
 .main__wrapper {
     min-height: 100vh;
-}
-
-.main {
+    background: var(--white-background);
     display: flex;
     flex-direction: column;
-    width: min(90%, 75rem);
-    margin: 2.9rem auto;
-    background: var( --white-background);
+    width: 100%;
+    // margin: 2.9rem auto;
     box-shadow: s.$box-shadow;
     padding: 0.8rem;
     padding: 1rem;
+}
 
-    @include s.breakpoint(m) {
-        width: 100%;
+.main {
+    margin-inline: auto;
+    width: 100%;
 
+    &__products {
+        width: min(90%, 76rem);
+        margin-inline: auto;
     }
+
 
     &__content {
         position: relative;
@@ -26,7 +29,7 @@
 
         @include s.breakpoint(m) {
             // flex-direction: column;
-    
+
         }
     }
 

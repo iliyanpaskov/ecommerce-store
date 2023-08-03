@@ -11,21 +11,26 @@
     border-bottom: 1px solid lightgrey;
     margin-bottom: 0.9rem;
 
+    @include mq.breakpoint(s) {
+        flex-direction: column;
+    }
+
     &>i {
         color: var(--dark-green-color);
         font-size: 1.4rem;
         display: none;
 
-        @include mq.breakpoint(m) {
-            display: inline-block;
-        }
     }
 
     &>h2 {
         margin: 0;
 
+        @include mq.breakpoint(m) {
+            font-size: 1.2rem;
+        }
+
         @include mq.breakpoint(s) {
-            display: none;
+            margin-bottom: 0.3rem;
         }
     }
 

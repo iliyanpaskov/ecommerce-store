@@ -1,15 +1,14 @@
 import { useContext, useEffect, useState } from 'react';
 import { ProductsDataContext } from '../../contexts/ProductsDataContext';
-import { FilterContext } from '../../contexts/FilterContext';
 import '../Filter/Filter.scss';
 
 const Filter = () => {
 
+    const [open, setOpen] = useState(false);
     const [brand, setBrand] = useState('all brands');
     const [gender, setGender] = useState('all genders');
     const [color, setColor] = useState('all colors');
     const { filterData } = useContext(ProductsDataContext);
-    const { filter } = useContext(FilterContext);
 
     useEffect(() => {
         filterData(brand, gender, color);
@@ -25,13 +24,17 @@ const Filter = () => {
         setColor(e.target.value);
     }
 
-    if (filter) {
-        return null;
-    }
-
 
     return (
-        <aside className='filter'>
+        <aside className={`filter ${open ? 'filter__open' : 'filter__close'}`}>
+            <div className='filter__buttons__wrapper'>
+                {
+                    open
+                        ? <i className="fa-solid fa-toggle-on" onClick={() => setOpen(!open)}></i>
+                        : <i className="fa-solid fa-toggle-off" onClick={() => setOpen(!open)}></i>
+                }
+            </div>
+
             <form className='filter__form' onChange={(e) => brandFomrHandler(e)}>
                 <h4 className='filter__form__title'>Brands:</h4>
                 <div>
@@ -107,7 +110,8 @@ const Filter = () => {
                     <label htmlFor="all colors">See all</label>
                 </div>
             </form>
-        </aside>
+            <h4 className='filter__title'>filter</h4>
+        </aside >
     );
 }
 

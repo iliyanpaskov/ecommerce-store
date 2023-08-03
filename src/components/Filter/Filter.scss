@@ -1,54 +1,59 @@
 @use '../../global-styles/' as mq;
 
 .filter {
-    position: sticky;
-    top: 7.4rem;
-    border-right: 1px solid lightgrey;
-    width: 10rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 1rem;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transition: 1s;
+    width: 12rem;
+    height: 100%;
+    box-shadow: mq.$box-shadow;
+    padding: 0 1.2rem;
 
-    @include mq.breakpoint(m) {
+    @include mq.breakpoint(l) {
+        width: 11.55rem;
+    }
+
+
+    &__buttons__wrapper {
+        color: var(--dark-green-color);
+        font-size: 1.5rem;
         position: absolute;
-        top: 0;
-        z-index: 2;
-        background: var(--background-color);
-        width: 60%;
-        padding: 1.5rem;
-        box-shadow: mq.$box-shadow;
-        // flex-direction: ;
-        // display: none;
-        // visibility: hidden;
+        right: 0.5rem;
+        top: 0.3rem;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        right: -2.6rem;
+        transform: rotate(-90deg);
+        top: 10rem;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.8rem;
         
     }
 
-
-    &__form {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-
-
-        &__title {
-            font-weight: 600;
-            text-decoration: underline;
-            margin: 1rem 0 0.5rem 0;
+    &__form{
+        margin-top: 1.5rem;
+        &__title{
+            margin-bottom:0.3rem ;
         }
-
-        &__option {
-            display: flex;
-            align-items: center;
-
-            & label:hover,
-            & input:hover {
-                cursor: pointer;
-            }
-        }
-
-
     }
+
+    &__open {
+        background: var(--orange-color);
+    }
+
+    &__close {
+        background: var(--header-footer-background);
+        left: -10rem;
+    }
+}
 
     .black {
         accent-color: #000;
@@ -70,13 +75,78 @@
         accent-color: #069b06;
     }
 
-    .other {
-        background: #9e9898;
-        accent-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    }
-}
+// .filter {
+//     position: sticky;
+//     top: 7.4rem;
+//     border-right: 1px solid lightgrey;
+//     width: 10rem;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     margin: 1rem;
 
-// .hide{
+//     @include mq.breakpoint(m) {
+//         position: absolute;
+//         top: 0;
+//         z-index: 2;
+//         background: var(--background-color);
+//         width: 60%;
+//         padding: 1.5rem;
+//         box-shadow: mq.$box-shadow;
+//         // flex-direction: ;
+//         // display: none;
+//         // visibility: hidden;
 
+//     }
+
+
+//     &__form {
+//         display: flex;
+//         flex-direction: column;
+//         align-items: start;
+
+
+//         &__title {
+//             font-weight: 600;
+//             text-decoration: underline;
+//             margin: 1rem 0 0.5rem 0;
+//         }
+
+//         &__option {
+//             display: flex;
+//             align-items: center;
+
+//             & label:hover,
+//             & input:hover {
+//                 cursor: pointer;
+//             }
+//         }
+
+
+//     }
+
+//     .black {
+//         accent-color: #000;
+//     }
+
+//     .white {
+//         accent-color: #f0f0f0;
+//     }
+
+//     .red {
+//         accent-color: #c50000;
+//     }
+
+//     .blue {
+//         accent-color: #0202c2;
+//     }
+
+//     .green {
+//         accent-color: #069b06;
+//     }
+
+//     .other {
+//         background: #9e9898;
+//         accent-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+//     }
 // }
-// .show{}
