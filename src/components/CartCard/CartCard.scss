@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
     width: 16rem;
-    height: 27rem;
+    height: 25rem;
     border: 1px solid var(--orange-color);
     padding: 0.2rem;
     background: var(--dark-green-color);
@@ -14,7 +14,7 @@
 
     &__image__wrapper {
         width: 100%;
-        height: 14rem;
+        height: 13rem;
 
         &>img {
             width: 100%;
@@ -52,6 +52,7 @@
 
         &__brand {
             font-size: 1.3rem;
+            margin-bottom: 0.3rem;
         }
 
         &__name {
@@ -78,6 +79,28 @@
 
         &>img {
             width: 100%;
+        }
+    }
+
+    &__total__price{
+        font-size: 1.8rem;
+        color: var(--dark-green-color);
+    }
+
+    &__send__button {
+        font-size: 1.2rem;
+        font-weight: 600;
+        background: var(--orange-color);
+        border: 1px solid var(--dark-green-color);
+        border-radius: 1rem;
+        padding: 0.3rem 1rem;
+        transition: transform 0.3s ease;
+        
+        &:hover{
+            color: var(--orange-color);
+            background: var(--dark-green-color);
+            transform: scale(1.1);
+            cursor: pointer;
         }
     }
 }

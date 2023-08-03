@@ -15,6 +15,11 @@ export const CartContextProvider = ({ children }) => {
         setCart(cart.filter((el) => el.objectId !== id))
     }
 
+    const emptyCart = () => {
+        setCart([]);
+        setOpen(false)
+    }
+
     const openCart = () => {
         setOpen(true);
     }
@@ -25,7 +30,7 @@ export const CartContextProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, loadProduct,removeProduct, openCart, closeCart, open }}>
+        <CartContext.Provider value={{ cart, loadProduct, removeProduct, openCart, closeCart, open,emptyCart }}>
             {children}
         </CartContext.Provider>
     );

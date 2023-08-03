@@ -1,18 +1,22 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
-import '../Cart/Cart.scss';
 import Logo from '../common/Logo/Logo';
 import CartCard from '../CartCard/CartCard';
+import '../Cart/Cart.scss';
 
 const Cart = () => {
 
-    const { cart, open, closeCart } = useContext(CartContext);
-
+    const { cart, open, closeCart,emptyCart } = useContext(CartContext);
+    const totalPrice = (cart.reduce((acc, currentProduct) => currentProduct.discount ? acc + currentProduct.price *0.85 :acc + currentProduct.price, 0)).toFixed(2);
     if (!open) {
         return null
     }
 
+    const hasProducts = !!cart.length > 0;
 
+    const sendOrderHandler =() => {
+        emptyCart();
+    }
 
     return (
         <section className='cart__wrapper' >
@@ -22,16 +26,25 @@ const Cart = () => {
                 </div>
                 <div className='cart__content'>
                     {
-                        cart.length > 0
+                        hasProducts
                             ? <>
-                                {cart.map((product) => <CartCard key={`${product.objectId}${Math.random()}`} product={product}/>)}
+                                {cart.map((product) => <CartCard key={`${product.objectId}${Math.random()}`} product={product} />)}
                             </>
                             : <div className='empty__cart'>
-                                <h1>You cart is empry lets start shopping !</h1>
+                                <h1>Your cart is empry ...  Lets start shopping !</h1>
                                 <Logo />
                             </div>
                     }
                 </div>
+                {
+                    hasProducts
+                        ?
+                        <>
+                            <h2 className='cart__card__total__price'>Total: ${totalPrice}</h2>
+                            <button className='cart__card__send__button' onClick={(e)=>{sendOrderHandler()}}>Send order</button>
+                        </>
+                        : null
+                }
             </section>
         </section>
     );
