@@ -7,7 +7,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    // margin: 2.9rem auto;
     box-shadow: s.$box-shadow;
     padding: 0.8rem;
     padding: 1rem;
@@ -22,16 +21,9 @@
         margin-inline: auto;
     }
 
-
     &__content {
         position: relative;
         display: flex;
         align-items: start;
-
-        @include s.breakpoint(m) {
-            // flex-direction: column;
-
-        }
     }
-
 }

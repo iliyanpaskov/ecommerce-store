@@ -50,7 +50,7 @@ const Products = () => {
                         </article>
                     </section>
             }
-            <GoTop/>
+            <GoTop />
         </main>
     )
 }

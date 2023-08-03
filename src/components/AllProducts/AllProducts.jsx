@@ -10,6 +10,7 @@ const AllProducts = () => {
     const { products, allProducts } = useContext(ProductsDataContext);
     const [showLimit, setShowLimit] = useState(8);
     const [isDisabled, setIsDisabled] = useState(false);
+
     useEffect(() => {
         setIsDisabled(false);
     }, [products, showLimit])
@@ -41,7 +42,7 @@ const AllProducts = () => {
                             {showProducts.map(product => <ProductsGridCard key={product.objectId} product={product} />)}
                         </section>
                         <ProductsCount count={productsCount} limit={showLimit} arrLength={allProducts.length} />
-                        <button className='grid__button' disabled={isDisabled} onClick={((e) => clickHandler(showProducts, allProducts))}>load more</button>
+                        <button className='grid__button' disabled={isDisabled} onClick={(() => clickHandler(showProducts, allProducts))}>load more</button>
                     </>
                     : <NotAvailable />
 

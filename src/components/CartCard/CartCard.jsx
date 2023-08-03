@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
-import {sadNotification} from '../../services/notificationServices';
+import { sadNotification } from '../../services/notificationServices';
 import '../CartCard/CartCard.scss';
 
 const CartCard = ({ product }) => {
@@ -73,7 +73,7 @@ const CartCard = ({ product }) => {
                     }
                 </div>
             </div>
-            <button onClick={(e) => {removeHandler(e.currentTarget.value) }} value={product.objectId} className='cart__card__remove__button'><img src="/images/cart-remove.png" alt="" /></button>
+            <button onClick={(e) => { removeHandler(e.currentTarget.value) }} value={product.objectId} className='cart__card__remove__button'><img src="/images/cart-remove.png" alt="" /></button>
         </article>
     )
 }

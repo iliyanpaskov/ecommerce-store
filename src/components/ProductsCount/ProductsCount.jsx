@@ -8,7 +8,7 @@ const ProductsCount = ({ count, limit, arrLength }) => {
                 {
                     arrLength >= limit
                         ? <>
-                             {` ${limit} `}
+                            {` ${limit} `}
                         </>
                         : <>
                             {` ${arrLength} `}

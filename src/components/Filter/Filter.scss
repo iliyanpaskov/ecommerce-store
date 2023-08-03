@@ -6,7 +6,6 @@
     z-index: 1;
     transition: 1s;
     width: 12rem;
-    // height: 100%;
     min-height: 29rem;
     box-shadow: mq.$box-shadow;
     padding: 0 1.2rem;
@@ -36,13 +35,13 @@
         font-size: 1.3rem;
         text-transform: uppercase;
         letter-spacing: 0.8rem;
-        
     }
 
-    &__form{
+    &__form {
         margin-top: 1.5rem;
-        &__title{
-            margin-bottom:0.3rem ;
+
+        &__title {
+            margin-bottom: 0.3rem;
         }
     }
 
@@ -56,25 +55,25 @@
     }
 }
 
-    .black {
-        accent-color: #000;
-    }
+.black {
+    accent-color: #000;
+}
 
-    .white {
-        accent-color: #f0f0f0;
-    }
+.white {
+    accent-color: #f0f0f0;
+}
 
-    .red {
-        accent-color: #c50000;
-    }
+.red {
+    accent-color: #c50000;
+}
 
-    .blue {
-        accent-color: #0202c2;
-    }
+.blue {
+    accent-color: #0202c2;
+}
 
-    .green {
-        accent-color: #069b06;
-    }
+.green {
+    accent-color: #069b06;
+}
 
 // .filter {
 //     position: sticky;
