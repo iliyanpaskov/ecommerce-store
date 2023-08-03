@@ -4,9 +4,9 @@
     width: 90%;
     margin: 1rem;
     padding: 3rem;
+    border: 1px solid lightgrey;
+    box-shadow: gl.$box-shadow;
 
-    border:1px solid lightgrey;
-    box-shadow :gl.$box-shadow;
     &__text {
         font-weight: 400;
         text-align: center;
