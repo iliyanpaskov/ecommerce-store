@@ -4,6 +4,7 @@ import { CartContextProvider } from './contexts/CartContext';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Products from './components/Products/Products';
+import { ToastContainer } from 'react-toastify';
 import './App.scss';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
                         <Header />
                         <Products />
                         <Footer />
+                        <ToastContainer />
                     </div>
                 </CartContextProvider>
             </CurrentCategoryProvider>
