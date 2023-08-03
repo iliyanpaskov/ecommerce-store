@@ -1,6 +1,7 @@
 @use '../../global-styles/' as s;
 
 .main__wrapper {
+    position: relative;
     min-height: 100vh;
     background: var(--white-background);
     display: flex;

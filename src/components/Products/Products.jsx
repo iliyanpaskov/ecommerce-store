@@ -12,6 +12,7 @@ import Loader from '../common/Loader/Loader';
 // import Cart from '../Cart/Cart';
 import './Products.scss';
 import Cart from '../Cart/Cart';
+import GoTop from '../common/GoTop/GoTop';
 
 const Products = () => {
     const { setProductsData, setAllProductsData, isLoading, setIsLoading } = useContext(ProductsDataContext);
@@ -28,7 +29,6 @@ const Products = () => {
 
 
     return (
-
         <main className='main__wrapper'>
             <Cart />
             {
@@ -50,6 +50,7 @@ const Products = () => {
                         </article>
                     </section>
             }
+            <GoTop/>
         </main>
     )
 }

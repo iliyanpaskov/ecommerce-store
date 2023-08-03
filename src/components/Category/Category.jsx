@@ -7,7 +7,7 @@ const Category = () => {
     const { currentCategory } = useContext(CurrentCategoryContext);
 
     return (
-        <section className="category">
+        <section id="category" className="category">
             <h2 className="category__title">{currentCategory}</h2>
             <article className="category__products">
                 <Sorter />

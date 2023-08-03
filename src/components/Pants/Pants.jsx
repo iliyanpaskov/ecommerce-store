@@ -8,7 +8,7 @@ import '../../products-styles/ProductsGridZoneStyles.scss';
 const Pants = () => {
 
     const { products } = useContext(ProductsDataContext);
-    const [showLimit, setShowLimit] = useState(12);
+    const [showLimit, setShowLimit] = useState(8);
     const [isDisabled, setIsDisabled] = useState(false);
     useEffect(() => {
         setIsDisabled(false);
@@ -22,9 +22,9 @@ const Pants = () => {
     const clickHandler = (arr, checkArr) => {
         arr = [...checkArr];
         if (showLimit < arr.length) {
-            setShowLimit(showLimit + 12)
-            arr = arr.slice(0, showLimit + 12)
-            if (showLimit + 12 > arr.length) {
+            setShowLimit(showLimit + 8)
+            arr = arr.slice(0, showLimit + 8)
+            if (showLimit + 8 > arr.length) {
                 setShowLimit(arr.length);
                 setIsDisabled(true)
             }

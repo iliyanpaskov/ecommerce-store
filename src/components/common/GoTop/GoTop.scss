@@ -1,0 +1,55 @@
+@use '../../../global-styles/' as mq;
+
+@keyframes pulsing {
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.pulse {
+    position: sticky;
+    bottom: 10%;
+    left: 93%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--orange-color);
+
+    @include mq.breakpoint (sm) {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.85rem;
+        color: var(--dark-green-color);
+    }
+
+    &__ring {
+        position: absolute;
+        background: inherit;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        opacity: 0.8;
+        animation: pulsing 4s ease-out infinite;
+
+
+        &>.two {
+            animation-delay: -1s;
+        }
+
+        &>.three {
+            animation-delay: -2s;
+        }
+
+        &>.four {
+            animation-delay: -3s;
+        }
+    }
+}
