@@ -1,6 +1,8 @@
+@use '../../global-styles/' as mq;
+
 .cart__wrapper {
     position: absolute;
-    z-index: 2;
+    z-index: 4;
     top: 0;
     left: 0;
     width: 100%;
@@ -15,11 +17,22 @@
     top: 9rem;
     padding: 0.5rem 0.5rem 2rem 0.5rem;
     margin-bottom: 2rem;
-    // max-height: 80%;
-    // width: min(20rem, 75rem);
     width: 80%;
     background: var(--header-footer-background);
     text-align: center;
+
+    @include mq.breakpoint(l) {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 2.2rem;
+        text-transform: capitalize;
+
+        @include mq.breakpoint(m) {
+            font-size: 1.7rem;
+        }
+    }
 
     &__icon__wrapper {
         display: flex;
@@ -30,6 +43,10 @@
     &__icon {
         font-size: 1.3rem;
         cursor: pointer;
+
+        @include mq.breakpoint(l) {
+            margin: 0.7rem 2.5rem 0 0;
+        }
     }
 
     &__content {
@@ -38,9 +55,15 @@
         gap: 1rem;
         padding: 1rem 0;
         min-height: 8rem;
-        // height: 90vh;
         justify-items: center;
-        // overflow: scroll;
+
+        @include mq.breakpoint(m) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include mq.breakpoint(sm) {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
     }
 }

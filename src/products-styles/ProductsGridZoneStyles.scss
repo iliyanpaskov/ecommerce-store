@@ -18,6 +18,22 @@
     justify-content: center;
     justify-items: center;
 
+    @include style.breakpoint(xl) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include style.breakpoint(l) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include style.breakpoint(m) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include style.breakpoint(sm) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     &__button {
         position: absolute;
         bottom: 0;
@@ -29,7 +45,7 @@
         border: 1px solid var(--dark-green-color);
         border-radius: 1rem;
         transition: transform .3s ease;
-        
+
         &:hover {
             cursor: pointer;
             transform: scale(1.1);

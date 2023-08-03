@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
-import {successNotification} from '../../services/notificationServices';
+import { successNotification } from '../../services/notificationServices';
 import '../ProductsGridCard/ProductsGridCard.scss';
 
 const ProductsGridCard = ({ product }) => {
 
-    const {loadProduct} = useContext(CartContext);
+    const { loadProduct } = useContext(CartContext);
 
     const addButtonClickHandler = (product) => {
         loadProduct(product);
@@ -20,7 +20,7 @@ const ProductsGridCard = ({ product }) => {
         stars.push(i);
     };
 
-    if(stars.length < 5) {
+    if (stars.length < 5) {
         const j = 5 - stars.length;
         for (let i = 0; i < j; i++) {
             emptyStars.push(i);
@@ -42,7 +42,7 @@ const ProductsGridCard = ({ product }) => {
                     ${product.price.toFixed(2)}
                 </span>
                 <span className='card__content__price__new'>
-                   Now ${discountedPrice.toFixed(2)}
+                    Now ${discountedPrice.toFixed(2)}
                 </span>
             </p>
         )
@@ -50,9 +50,9 @@ const ProductsGridCard = ({ product }) => {
 
     const Stars = () => {
         return (
-            <p>
-                {stars.map(el =><i key={Math.random()} className="fa-solid fa-star"></i> )}
-                {emptyStars.map(el =><i key={Math.random()} className="fa-regular fa-star"></i> )}
+            <p className='card__content__stars'>
+                {stars.map(el => <i key={Math.random()} className="fa-solid fa-star"></i>)}
+                {emptyStars.map(el => <i key={Math.random()} className="fa-regular fa-star"></i>)}
             </p>
         )
     };
@@ -67,7 +67,6 @@ const ProductsGridCard = ({ product }) => {
         return result;
     }
 
-
     return (
         <article className='card'>
             <div className='card__image__wrapper'>
@@ -78,16 +77,15 @@ const ProductsGridCard = ({ product }) => {
                 <p className='card__content__info'>{informationCutter(product.description)}</p>
                 {
                     !product.discount
-                        ?<PriceTemplate/>
-                        : <DiscountedPriceTemplate/>
+                        ? <PriceTemplate />
+                        : <DiscountedPriceTemplate />
                 }
                 {
-                    <Stars/>
+                    <Stars />
                 }
             </div>
             <div className='card__buttons__wrapper'>
-                <button className='details'>details</button>
-                <button className='add' onClick={(e)=>{addButtonClickHandler(product)}} >add to cart</button>
+                <button className='add' onClick={(e) => { addButtonClickHandler(product) }} >add to cart</button>
             </div>
         </article>
     )

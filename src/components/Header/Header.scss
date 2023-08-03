@@ -17,23 +17,42 @@
     width: min(90%, 75rem);
     padding: 1rem 2rem;
 
+    @include style.breakpoint(l) {
+        flex-direction: column;
+    }
+
+    @include style.breakpoint(m) {
+        padding: 0.7rem 0;
+    }
+
     &__navigation {
         &__list {
             display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            @include style.breakpoint(m) {
+                margin: 0;
+            }
+
+            &__item {
+                margin: 0.5rem;
+            }
 
             &__item__cart {
                 position: relative;
                 z-index: 2;
 
                 & .header__cart__count {
-                    position: absolute; 
-                    z-index: 1;  
+                    position: absolute;
+                    z-index: 1;
                     top: -0.9rem;
                     right: -0.8rem;
-                    
+
                     width: 1.2rem;
                     height: 1.2rem;
-                    text-align: center;               
+                    text-align: center;
                     background: red;
                     font-size: 0.7rem;
                     padding: 0.3rem;
@@ -46,6 +65,11 @@
                 text-transform: capitalize;
                 padding: 0.5rem 1.5rem;
                 border-radius: 1rem;
+
+                @include style.breakpoint(m) {
+                    font-size: 0.9rem;
+                    padding: 0.2rem 1rem;
+                }
 
                 &:hover {
                     background: var(--dark-green-color);

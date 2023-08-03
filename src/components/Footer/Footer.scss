@@ -16,6 +16,9 @@ footer {
 
     &__list {
         display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
 
         &__item {
             text-transform: capitalize;
@@ -28,11 +31,19 @@ footer {
                     color: var(--orange-color);
                     background: var(--dark-green-color);
                 }
+
+                @include style.breakpoint(sm) {
+                    font-size: 0.78em;
+                }
             }
         }
     }
 
     & p {
         margin: 2.5rem 0 0.5rem 0;
+
+        @include style.breakpoint(sm) {
+            font-size: 0.7rem;
+        }
     }
 }

@@ -6,6 +6,7 @@ import Footer from './components/Footer/Footer';
 import Products from './components/Products/Products';
 import { ToastContainer } from 'react-toastify';
 import './App.scss';
+import { FilterProvider } from './contexts/FilterContext';
 
 function App() {
 
@@ -13,12 +14,14 @@ function App() {
         <ProductsDataProvider>
             <CurrentCategoryProvider>
                 <CartContextProvider>
-                    <div className='app'>
-                        <Header />
-                        <Products />
-                        <Footer />
-                        <ToastContainer />
-                    </div>
+                    <FilterProvider>
+                        <div className='app'>
+                            <Header />
+                            <Products />
+                            <Footer />
+                            <ToastContainer />
+                        </div>
+                    </FilterProvider>
                 </CartContextProvider>
             </CurrentCategoryProvider>
         </ProductsDataProvider>

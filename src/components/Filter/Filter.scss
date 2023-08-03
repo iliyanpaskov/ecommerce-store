@@ -1,3 +1,5 @@
+@use '../../global-styles/' as mq;
+
 .filter {
     position: sticky;
     top: 7.4rem;
@@ -7,6 +9,21 @@
     flex-direction: column;
     justify-content: center;
     margin: 1rem;
+
+    @include mq.breakpoint(m) {
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        background: var(--background-color);
+        width: 60%;
+        padding: 1.5rem;
+        box-shadow: mq.$box-shadow;
+        // flex-direction: ;
+        // display: none;
+        // visibility: hidden;
+        
+    }
+
 
     &__form {
         display: flex;
@@ -58,3 +75,8 @@
         accent-color: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     }
 }
+
+// .hide{
+
+// }
+// .show{}

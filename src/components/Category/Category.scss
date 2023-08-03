@@ -1,3 +1,5 @@
+@use '../../global-styles/' as mq;
+
 .category {
     margin-inline: auto;
     display: flex;
@@ -9,8 +11,22 @@
     border-bottom: 1px solid lightgrey;
     margin-bottom: 0.9rem;
 
-    &>h2{
-        margin: 0;
+    &>i {
+        color: var(--dark-green-color);
+        font-size: 1.4rem;
+        display: none;
+
+        @include mq.breakpoint(m) {
+            display: inline-block;
+        }
     }
-  
+
+    &>h2 {
+        margin: 0;
+
+        @include mq.breakpoint(s) {
+            display: none;
+        }
+    }
+
 }

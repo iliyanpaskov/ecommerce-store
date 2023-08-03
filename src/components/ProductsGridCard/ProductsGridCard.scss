@@ -1,4 +1,7 @@
+@use '../../global-styles/' as mq;
+
 .card {
+    position: relative;
     width: 14rem;
     padding: 0.1rem;
     border: 1px solid var(--dark-green-color);
@@ -7,6 +10,16 @@
     align-items: center;
     transition: transform .2s;
 
+    @include mq.breakpoint(m) {
+        width: 10rem;
+        align-content: center;
+    }
+
+    @include mq.breakpoint(s) {
+        width: 7rem;
+        align-content: center;
+    }
+
     &:hover {
         transform: scale(1.02);
         background: var(--orange-color);
@@ -14,13 +27,22 @@
 
     &__image__wrapper {
         width: 13.7rem;
+        height: 15rem;
+
+        @include mq.breakpoint(m) {
+            width: 100%;
+            height: 9rem;
+        }
 
         & img {
             width: 100%;
-            height: 12rem;
+            height: 100%;
             object-fit: cover;
             border: 1px solid var(--dark-green-color);
-            
+
+            // @include mq.breakpoint(m) {
+            //     height: 8rem;
+            // }
         }
     }
 
@@ -36,11 +58,35 @@
         color: var(--dark-green-color);
     }
 
+    &__content__title {
+        @include mq.breakpoint(s) {
+            font-size: 1rem;
+        }
+    }
+
     &__content__info {
         white-space: pre-wrap;
         width: 13rem;
         overflow: hidden;
         text-overflow: "ellipsis";
+        width: 100%;
+
+        @include mq.breakpoint(s) {
+            font-size: 0.8rem;
+        }
+    }
+
+    &__content__stars {
+        margin: 0;
+
+        @include mq.breakpoint(m) {
+            color: var(--orange-color);
+            margin-bottom: 2rem;
+        }
+
+        @include mq.breakpoint(s) {
+            font-size: 0.8rem;
+        }
     }
 
     &__content__price {
@@ -50,16 +96,34 @@
         justify-content: space-around;
         align-items: end;
 
+        @include mq.breakpoint(m) {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+
+            @include mq.breakpoint(s) {
+                font-size: 0.8rem;
+            }
+        }
+
         &__old {
             color: red;
             font-size: 0.9rem;
             text-decoration: line-through;
+
+            @include mq.breakpoint(s) {
+                font-size: 0.8rem;
+            }
         }
 
         &__new {
             font-size: 1rem;
             font-weight: 700;
             text-decoration: underline;
+
+            @include mq.breakpoint(s) {
+                font-size: 0.85rem;
+            }
         }
     }
 
@@ -69,6 +133,11 @@
         justify-content: space-between;
         margin: 1rem 0;
 
+        @include mq.breakpoint(m) {
+            position: absolute;
+            bottom: -0.6rem;
+        }
+
         & button {
             padding: 0.3rem 0.6rem;
             background: var(--background-color);
@@ -77,15 +146,22 @@
             border-radius: 1rem;
             font-weight: 600;
             text-transform: uppercase;
+            margin-inline: auto;
+
+            @include mq.breakpoint(m) {
+                font-size: 0.7rem;
+            }
+
+            @include mq.breakpoint(s) {
+                font-size: 0.6rem;
+            }
 
             &:hover {
                 cursor: pointer;
-
             }
         }
 
-        & .add:hover,
-        & .details:hover {
+        & .add:hover {
             background: var(--dark-green-color);
             color: var(--orange-color);
         }

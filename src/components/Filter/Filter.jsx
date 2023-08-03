@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import '../Filter/Filter.scss';
 import { ProductsDataContext } from '../../contexts/ProductsDataContext';
+import { FilterContext } from '../../contexts/FilterContext';
+import '../Filter/Filter.scss';
 
 const Filter = () => {
 
@@ -8,6 +9,7 @@ const Filter = () => {
     const [gender, setGender] = useState('all genders');
     const [color, setColor] = useState('all colors');
     const { filterData } = useContext(ProductsDataContext);
+    const { filter } = useContext(FilterContext);
 
     useEffect(() => {
         filterData(brand, gender, color);
@@ -23,29 +25,36 @@ const Filter = () => {
         setColor(e.target.value);
     }
 
+    if (filter) {
+        return null;
+    }
 
 
     return (
         <aside className='filter'>
             <form className='filter__form' onChange={(e) => brandFomrHandler(e)}>
                 <h4 className='filter__form__title'>Brands:</h4>
-                <div className='filter__form__option'>
-                    <input type="radio" id='adidas' name='brand' value='adidas' />
-                    <label htmlFor="adidas">Adidas</label>
+                <div>
+
+                    <div className='filter__form__option'>
+                        <input type="radio" id='adidas' name='brand' value='adidas' />
+                        <label htmlFor="adidas">Adidas</label>
+                    </div>
+                    <div className='filter__form__option'>
+                        <input type="radio" id='nike' name='brand' value='nike' />
+                        <label htmlFor="nike">Nike</label>
+                    </div>
+                    <div className='filter__form__option'>
+                        <input type="radio" id='under armour' name='brand' value='under armour' />
+                        <label htmlFor="under armour">Under Armour</label>
+                    </div>
+                    <div className='filter__form__option'>
+                        <input type="radio" id='all brands' name='brand' value='all brands' />
+                        <label htmlFor="all brands">See all</label>
+                    </div>
+
                 </div>
-                <div className='filter__form__option'>
-                    <input type="radio" id='nike' name='brand' value='nike' />
-                    <label htmlFor="nike">Nike</label>
-                </div>
-                <div className='filter__form__option'>
-                    <input type="radio" id='under armour' name='brand' value='under armour' />
-                    <label htmlFor="under armour">Under Armour</label>
-                </div>
-                <div className='filter__form__option'>
-                    <input type="radio" id='all brands' name='brand' value='all brands' />
-                    <label htmlFor="all brands">See all</label>
-                </div>
-                </form >
+            </form >
             <form className='filter__form' onChange={(e) => genderFomrHandler(e)}>
                 <h4 className='filter__form__title'>Gender:</h4>
                 <div className='filter__form__option'>
@@ -64,7 +73,7 @@ const Filter = () => {
                     <input type="radio" id='all genders' name='gender' value='all genders' />
                     <label htmlFor="all genders">See all</label>
                 </div>
-                </form >
+            </form >
             <form className='filter__form' onChange={(e) => colorFomrHandler(e)}>
 
                 <h4 className='filter__form__title'>Colors:</h4>
