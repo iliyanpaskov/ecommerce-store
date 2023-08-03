@@ -1,3 +1,4 @@
+import {errorNotification} from '../services/notificationServices';
 
 const url = 'https://parseapi.back4app.com/classes/products';
 
@@ -19,6 +20,6 @@ export async function getAllProducts() {
             throw data.error;
         }
     } catch (error) {
-        console.log(error.message);
+       errorNotification(error.message);
     }
 }

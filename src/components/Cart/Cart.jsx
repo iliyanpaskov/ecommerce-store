@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
 import Logo from '../common/Logo/Logo';
 import CartCard from '../CartCard/CartCard';
+import {happyNotification} from '../../services/notificationServices';
 import '../Cart/Cart.scss';
 
 const Cart = () => {
@@ -16,6 +17,7 @@ const Cart = () => {
 
     const sendOrderHandler =() => {
         emptyCart();
+        happyNotification('Your order was sent!');
     }
 
     return (

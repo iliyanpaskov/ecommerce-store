@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import {sadNotification} from '../../services/notificationServices';
 import '../CartCard/CartCard.scss';
 
 const CartCard = ({ product }) => {
@@ -51,7 +52,8 @@ const CartCard = ({ product }) => {
     };
 
     const removeHandler = (id) => {
-        removeProduct(id)
+        removeProduct(id);
+        sadNotification(`Item ${id} removed!`)
     };
 
     return (

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { CartContext } from '../../contexts/CartContext';
+import {successNotification} from '../../services/notificationServices';
 import '../ProductsGridCard/ProductsGridCard.scss';
 
 const ProductsGridCard = ({ product }) => {
@@ -8,6 +9,7 @@ const ProductsGridCard = ({ product }) => {
 
     const addButtonClickHandler = (product) => {
         loadProduct(product);
+        successNotification(`Item ${product.objectId} added!`);
     }
 
     const starsCount = product.stars;
