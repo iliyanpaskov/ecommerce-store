@@ -11,8 +11,8 @@ Generated with:
 - To start this app: npm run dev 
 - Project for sportswear ecommerce store.
 - Header with a logo and navigation bar. The navigation bar contains 'All products' (as the home page), 'Trainers',' T-Shirts', 'Pants' (from where you can choose wanted products type), and Cart (cart icon and added products counter).
-- When you open the cart and it's empty, a message appears indicating that the cart is empty along with the store's logo.
-- Category section with dynamically changing name with drop-down sorter. All products can be sorted by four mechanisms: alphabetical a-z, alphabetical z-a, price ascending, and price descending.If there are products in the cart they will be rendered with item cards. Under them, there will be a 'Send order' button with which you can send it.
+- When you open the cart and it's empty, a message appears indicating that the cart is empty along with the store's logo. If there are any items added, they will be rendered with cards. On each of them, there is information about the product (photo, brand, model, price, and stars) as well as a button with which the product can be removed from the cart. Below them, there is the total price of all the items in the cart and a button 'Send order' that sends the order.
+- Category section with dynamically changing name with drop-down sorter. All products can be sorted by four mechanisms: alphabetical a-z, alphabetical z-a, price ascending, and price descending.
 - In the products section there is a filter sidebar with three filtering mechanisms: brand, gender, and colors.Right of it there is a product grid field. At first, it loads two rows and four columns with product cards. If there are no items with chosen params message will be shown.
 - Each card contains a product image, name, short description, price (ordinary or with discount), stars count (from one to five),  and an 'Add cart' button to add the current product to the cart.
 - Under the products section, there is a counter that shows how many items comply with the filter requirements and  how many of them are rendered.
