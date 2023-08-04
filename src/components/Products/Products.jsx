@@ -9,10 +9,9 @@ import AllProducts from '../AllProducts/AllProducts';
 import TShirts from '../TShirts/TShirts';
 import Pants from '../Pants/Pants';
 import Loader from '../common/Loader/Loader';
-// import Cart from '../Cart/Cart';
-import './Products.scss';
 import Cart from '../Cart/Cart';
 import GoTop from '../common/GoTop/GoTop';
+import './Products.scss';
 
 const Products = () => {
     const { setProductsData, setAllProductsData, isLoading, setIsLoading } = useContext(ProductsDataContext);
@@ -44,7 +43,7 @@ const Products = () => {
                                     <Route path='/trainers' element={< Trainers />} />
                                     <Route path='/t-shirts' element={<TShirts />} />
                                     <Route path='/pants' element={<Pants />} />
-                                    {/* <Route path='/cart' element={<Cart />} /> */}
+                                    <Route path="/*" element={<AllProducts />} />
                                 </Routes>
                             </article>
                         </article>
