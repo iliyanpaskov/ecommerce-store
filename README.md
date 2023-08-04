@@ -1,8 +1,14 @@
-# React + Vite
+# Ecommerce store project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Generated with:
+ - [Vite](https://vitejs.dev/) version 4.4.5;
+ - [React](https://legacy.reactjs.org/versions/) version 18.2.0;
+ - [React Router](https://reactrouter.com/en/main)version 6.14.2;
+ - [React Toastify](https://www.npmjs.com/package/react-toastify) version 9.1.3;
+ - [SASS/SCSS](https://sass-lang.com/documentation/syntax/) version 1.64.1;
 
-Currently, two official plugins are available:
+Commands:
+- npm run dev 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Project information:
+

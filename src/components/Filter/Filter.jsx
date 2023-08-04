@@ -106,7 +106,7 @@ const Filter = () => {
                     <label htmlFor="other">Other</label>
                 </div>
                 <div className='filter__form__option'>
-                    <input type="radio" id='all colors' name='color' value='all colors' className='' />
+                    <input type="radio" id='all colors' name='color' value='all colors' className='all' />
                     <label htmlFor="all colors">See all</label>
                 </div>
             </form>
